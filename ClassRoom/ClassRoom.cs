@@ -15,9 +15,10 @@ namespace ClassRoom
         {
             get;set;
         }
-        public List<T> ClassList
+        public List<Student> ClassList
         {
             get;set;
         }
+        public ClassRoom() { }
     }
 }
