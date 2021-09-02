@@ -14,9 +14,9 @@ namespace ClassRoom
 
         public Student(string name, int birthMonth, int birthDay)
         {
-            _name = name;
-            _birthDay = birthDay;
-            _birthMonth = birthMonth;
+            Name = name;
+            BirthDay = birthDay;
+            BirthMonth = birthMonth;
         }
 
         public string Name
@@ -26,8 +26,11 @@ namespace ClassRoom
 
         public int BirthMonth
         {
-            get;
-            private set;
+            get { return _birthMonth; }
+            private set {
+                if (value < 1 || value > 12)
+                    throw new ArgumentException("The month is out of range");
+            }
         }
 
         public int BirthDay
@@ -35,6 +38,25 @@ namespace ClassRoom
             get;
             private set;
         }
-
+        public string Season(int birthMonth)
+        {
+            if (birthMonth == 12 || birthMonth == 1 || birthMonth == 2)
+            {
+                return "Winter";
+            }
+            else if (birthMonth == 3 || birthMonth == 4 || birthMonth == 5)
+            {
+                return "Spring";
+            }
+            else if (birthMonth == 6 || birthMonth == 7 || birthMonth == 8)
+            {
+                return "Summer";
+            }
+            else if (birthMonth == 9 || birthMonth == 10 || birthMonth == 11)
+            {
+                return "Autumn";
+            }
+            else return "invalid month";
+        }
     }
 }

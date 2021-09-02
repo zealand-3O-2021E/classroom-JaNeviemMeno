@@ -19,6 +19,13 @@ namespace ClassRoom
         {
             get;set;
         }
-        public ClassRoom() { }
+        public ClassRoom()
+        {
+            ClassList = new List<Student>();
+        }
+        //public void SeasonCount()
+        //{
+        //    var SeasonX = ClassList.GroupBy(x=>x.Season(x.BirthMonth).Select()
+        //}
     }
 }
