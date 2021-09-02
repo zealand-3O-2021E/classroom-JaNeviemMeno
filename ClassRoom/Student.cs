@@ -30,6 +30,8 @@ namespace ClassRoom
             private set {
                 if (value < 1 || value > 12)
                     throw new ArgumentException("The month is out of range");
+                else
+                    _birthMonth = value;
             }
         }
 
