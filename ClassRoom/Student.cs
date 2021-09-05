@@ -8,9 +8,7 @@ namespace ClassRoom
 {
     public class Student
     {
-        private string _name;
         private int _birthMonth;
-        private int _birthDay;
 
         public Student(string name, int birthMonth, int birthDay)
         {

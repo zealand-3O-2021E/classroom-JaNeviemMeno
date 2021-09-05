@@ -23,9 +23,17 @@ namespace ClassRoom
         {
             ClassList = new List<Student>();
         }
-        //public void SeasonCount()
-        //{
-        //    var SeasonX = ClassList.GroupBy(x=>x.Season(x.BirthMonth).Select()
-        //}
+        public void SeasonCount()
+        {
+            var count = this.ClassList.GroupBy(s => s.Season(s.BirthMonth)).Select(group => new
+            {
+                Season = group.Key,
+                Amount = group.Count()
+            });
+            foreach (var item in count)
+            {
+                Console.WriteLine($"Season {item.Season} has this many students {item.Amount}");
+            }
+        }
     }
 }
